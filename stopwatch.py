@@ -1,4 +1,6 @@
 # stopwatch.py
+###############################################################################
+# Description 
 #
 # This is a stopwatch GUI app with start, stop, and reset functions.
 #
@@ -16,6 +18,21 @@
 #
 # On Windows, you can run this without a console window via
 # > pythonw .\stopwatch.py 
+#
+###############################################################################
+# Implementation Notes
+#
+# I just learned how to post a custom event for the tkinter window loop.
+# This enabled me to change updateThread so that it doesn't directly update
+# lbl_time, and therefore can't deadlock with the window thread.
+# However, I didn't take advantage of this to join updateThread directly from
+# the window thread. Might be something to try later, to see if it simplifies
+# the code.
+#
+# Also, I figured out the app was hanging on exceptions - not because of the
+# window thread deadlocking - but because threadMgr was still running. So I
+# guess python doesn't kill the process in that case. So I added a try-except
+# that will kill via os._exit(1). 
 #
 
 import os
