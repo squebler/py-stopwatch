@@ -1,6 +1,8 @@
 # Description
 This is a stopwatch GUI app with start, stop, and reset functions.
 
+![Screenshot](/screenshots/screenshot.png?raw=true)
+
 Hitting start while already started has no effect.
 
 When you hit stop, the time is not reset.
