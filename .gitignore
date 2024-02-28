@@ -1,0 +1,8 @@
+# poetry
+poetry.lock
+
+# pyinstaller
+build/
+dist/
+*.spec
+
